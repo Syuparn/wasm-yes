@@ -1,0 +1,34 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+
+    # build wasm from wat
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: install tools for CI
+      run: npm install
+
+    - name: build wasm
+      run: npx wat2wasm yes.wat
+
+    # deploy to wapm
+    - name: install wapm cli
+      uses: wasmerio/setup-wasmer@v1
+
+    - name: publish to wapm
+      uses: wasmerio/wapm-publish@v1
+      with:
+        username: ${{ secrets.WAPM_USERNAME }}
+        password: ${{ secrets.WAPM_PASSWORD }}
