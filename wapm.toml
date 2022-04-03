@@ -3,6 +3,7 @@ name = "Syuparn/yes"
 version = "0.1.0"
 description = "yes command implemented in WebAssembly and WASI"
 license = "MIT"
+readme = "README.md"
 repository = "https://github.com/Syuparn/wasm-yes"
 
 [[module]]
