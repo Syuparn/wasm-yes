@@ -1,16 +1,40 @@
 # wasm-yes
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![Test](https://github.com/Syuparn/wasm-yes/actions/workflows/test.yml/badge.svg)](https://github.com/Syuparn/wasm-yes/actions/workflows/test.yml)
+[![WAPM](https://img.shields.io/badge/WAPM-0.1.1-blueviolet)](https://wapm.io/Syuparn/yes)
 
 yes command implemented in WebAssembly and WASI
+
+# Install
+
+This command is distributed from [WAPM](https://wapm.io/).
+
+```bash
+$ wapm install Syuparn/yes
+$ wapm run yes | head -n 3
+y
+y
+y
+```
+
+You can also compile wasm manually from `wat` file.
+
+```bash
+$ wasm2wat yes.wat
+$ wasmer yes.wasm
+y
+y
+y
+...
+```
 
 # Usage
 
 Same as the GNU `yes` command.
 
 ```bash
-# run command by wasmer (or whatever wasm runtime you like)
-$ wasmer yes.wasm
+# write `y` infinitely
+$ wapm run yes.wasm
 y
 y
 y
