@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "bats": "^1.6.0",
+    "wat2wasm": "^3.0.0"
+  }
+}
