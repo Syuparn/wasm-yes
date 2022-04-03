@@ -3,8 +3,8 @@ name: Test
 on: [push]
 
 jobs:
-  build:
-    name: Build
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
 
@@ -23,4 +23,4 @@ jobs:
       run: npx wat2wasm yes.wat
 
     - name: run test
-      run: npx bats test/yes.bats
+      run: npx bats -x test/yes.bats

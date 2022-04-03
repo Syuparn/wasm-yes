@@ -46,3 +46,22 @@ y
 # About source code
 
 In order to reduce binary size, `yes.wat` is written by hand.
+
+# For developers
+
+You can test generated wasm by [bats](https://github.com/bats-core/bats-core).
+
+```bash
+# install wat2wasm and bats
+$ npm install
+
+# build wasm
+$ npx wat2wasm yes.wat
+
+# run test (requires wasmer)
+$ npx bats test/yes.bats
+ ✓ yes without argument writes 'y'
+ ✓ yes always writes 'y'
+
+2 tests, 0 failures
+```
