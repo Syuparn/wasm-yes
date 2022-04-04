@@ -39,3 +39,13 @@
   result="$(wasmer yes.wasm foo bar baz hoge fuga piyo | head -n 1)"
   [ "$result" = "foo" ]
 }
+
+@test "yes can handle multibyte argument" {
+  lineno=0
+  for result in $(wasmer yes.wasm はい | head -n 10); do
+    echo "line $((lineno++)):"
+    [ "$result" = "はい" ]
+  done
+
+  [ "$lineno" -eq 10 ]
+}

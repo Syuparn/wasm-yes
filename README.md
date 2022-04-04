@@ -34,12 +34,21 @@ Same as the GNU `yes` command.
 
 ```bash
 # write `y` infinitely
-$ wapm run yes.wasm
+$ wapm run yes
 y
 y
 y
 y
 y
+...
+
+# write argument instead
+$ wapm run yes no!
+no!
+no!
+no!
+no!
+no!
 ...
 ```
 
