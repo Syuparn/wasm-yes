@@ -1,7 +1,7 @@
 # wasm-yes
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![Test](https://github.com/Syuparn/wasm-yes/actions/workflows/test.yml/badge.svg)](https://github.com/Syuparn/wasm-yes/actions/workflows/test.yml)
-[![WAPM](https://img.shields.io/badge/WAPM-0.2.1-blueviolet)](https://wapm.io/Syuparn/yes)
+[![WAPM](https://img.shields.io/badge/WAPM-0.2.2-blueviolet)](https://wapm.io/Syuparn/yes)
 
 yes command implemented in WebAssembly and WASI
 
@@ -34,12 +34,21 @@ Same as the GNU `yes` command.
 
 ```bash
 # write `y` infinitely
-$ wapm run yes.wasm
+$ wapm run yes
 y
 y
 y
 y
 y
+...
+
+# write argument instead
+$ wapm run yes no!
+no!
+no!
+no!
+no!
+no!
 ...
 ```
 

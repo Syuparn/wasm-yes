@@ -1,6 +1,6 @@
 [package]
 name = "Syuparn/yes"
-version = "0.2.1"
+version = "0.2.2"
 description = "yes command implemented in WebAssembly and WASI"
 license = "MIT"
 readme = "README.md"
